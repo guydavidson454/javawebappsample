@@ -20,7 +20,7 @@ node {
       def webAppResourceGroup = 'myResourceGroup2'
       def webAppName = 'myApp5170'
       def acrName = 'myacrname5170'
-      def imageName = '<registry>'
+      def imageName = 'myacrname5170.azurecr.io'
       // generate version, it's important to remove the trailing new line in git describe output
       def version = sh script: 'git describe | tr -d "\n"', returnStdout: true
       withCredentials([usernamePassword(credentialsId: 'jenkins-sp', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
